@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hotel-booking-quote-srv
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /hotel-booking-quote-srv
+          backend:
+            serviceName: hotel-booking-quote-srv
+            servicePort: 8080
+        
